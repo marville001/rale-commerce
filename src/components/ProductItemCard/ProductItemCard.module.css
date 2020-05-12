@@ -1,0 +1,42 @@
+.cardContainer {
+  width: 200px;
+  margin: 5px;
+  overflow: hidden;
+  padding: 0px 0px 10px;
+}
+
+.cardImageContainer {
+  width: 100%;
+  height: 150px;
+}
+.cardImage {
+  width: 100%;
+  height: 100%;
+  transition: 1s ease-in-out;
+}
+
+.cardImage:hover {
+  transform: scale(1.1);
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.cardItemName,
+.cardItemPrice {
+  text-align: center;
+  margin: 2px;
+}
+.cardItemName {
+  font-size: 14px;
+}
+.cardItemPrice span {
+  color: teal;
+}
+.addToCartBtnContainer {
+  display: flex;
+  margin: 10px 0px;
+  justify-content: center;
+}
+.addToCartBtn {
+  background-color: #0c9c0ee0;
+  color: #fff;
+}

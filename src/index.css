@@ -1,0 +1,42 @@
+body,
+html,
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+input {
+  margin: 0.5rem !important;
+}
+button,
+a {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: center;
+  user-select: none;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  text-transform: capitalize;
+  border: none;
+  border-radius: 0.25rem;
+  margin: 0.5rem;
+}
+.btnS {
+  background-color: #28a745;
+  color: #fff;
+}
+
+button:focus {
+  outline: none;
+  border: none;
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style-type: none;
+}

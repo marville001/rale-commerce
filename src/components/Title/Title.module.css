@@ -1,0 +1,10 @@
+.titleContainer,
+.titleContainer span {
+  text-align: center;
+  font-size: 30px;
+  text-transform: capitalize;
+}
+.titleContainer span {
+  color: teal;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}

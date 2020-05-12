@@ -1,0 +1,20 @@
+.footer {
+  position: relative;
+  min-height: 80px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+  padding: 20px 0px 0px 0px;
+}
+.socialLinks {
+  display: flex;
+  justify-content: center;
+}
+.socialLinks a {
+  margin: 5px 15px;
+  color: brown;
+}
+.socialLinks a:hover {
+  color: blue;
+}

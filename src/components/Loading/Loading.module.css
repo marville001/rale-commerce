@@ -1,0 +1,9 @@
+.loadContainer {
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loadContainer p {
+  font-size: 20px;
+}
