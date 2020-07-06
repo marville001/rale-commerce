@@ -1,32 +1,39 @@
 import React from "react";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 
-import ItemCard from "../ProductItemCard/ProductItemCard";
+import { Loading, ItemCard } from "../";
 
 import styles from "./ProductItemCardList.module.css";
-import { Loading, Title } from "../";
 
-const ItemCardList = ({ products, loading }) => {
+const ItemCardList = ({ loading }) => {
+  const products = useSelector((state) => state.products.products);
   return (
     <div className={styles.productsContainer}>
-      <Title name="our" subname="items" />
       {loading ? (
         <Loading />
       ) : (
-        <div className={styles.productsItemsContainer}>
-          {products.map(product => (
-            <ItemCard key={product._id} product={product} />
-          ))}
-        </div>
+        <>
+          {products && products.length !== 0 ? (
+            <div className={styles.productsItemsContainer}>
+              {products.map((product) => (
+                <ItemCard key={product._id} product={product} />
+              ))}
+            </div>
+          ) : (
+            <div className={styles.noMatchContainer}>
+              <h4>Sorry no match found....</h4>
+            </div>
+          )}
+        </>
       )}
     </div>
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    products: state.products,
-    loading: state.loading
+    // products: state.products,
+    loading: state.products.loading,
   };
 };
 

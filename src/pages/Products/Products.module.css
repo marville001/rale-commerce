@@ -1,0 +1,45 @@
+.productsTopContainer {
+  display: flex;
+  min-height: 50vh;
+  padding: 10px 5rem;
+}
+.productsContainer {
+  padding-top: 10px;
+}
+.productsBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  width: 100%;
+}
+.humberger {
+  cursor: pointer;
+  display: block;
+  position: fixed;
+  z-index: 900;
+  top: 15px;
+  left: 5px;
+}
+.humberger span {
+  display: flex;
+  flex-direction: column;
+  width: 25px;
+  height: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin: 2px 5px;
+}
+
+.close {
+  font-size: 2.4rem;
+  margin: -6px 0px 0px 10px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: bolder;
+  user-select: none;
+}
+
+@media screen and (max-width: 900px) {
+  .productsTopContainer {
+    padding: 10px 0px;
+  }
+}

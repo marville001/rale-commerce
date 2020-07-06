@@ -1,8 +1,11 @@
-export { default as Home } from "./Home/Home";
-export { default as ContactUs } from "./ContactUs/ContactUs";
-export { default as AboutUs } from "./AboutUs/AboutUs";
 export { default as Cart } from "./Cart/Cart";
-export { default as Login } from "./Login/Login";
-export { default as SignUp } from "./SignUp/SignUp";
+export { default as SignIn } from "./SignIn/SignIn";
+export { default as Register } from "./Register/Register";
+export { default as Shipping } from "./Shipping/Shipping";
+export { default as Payment } from "./Payment/Payment";
 export { default as PageNotFound } from "./404/404";
 export { default as Wrapper } from "./Wrapper/Wrapper";
+export { default as Products } from "./Products/Products";
+export { default as ProductDetails } from "./ProductDetails/ProductDetails";
+export { default as ProductSearch } from "./ProductSearch/ProductSearch";
+export { default as Welcome } from "./Welcome/Welcome";

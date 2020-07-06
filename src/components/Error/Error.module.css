@@ -1,0 +1,14 @@
+.errorContainer {
+  background-color: tomato;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 0.5rem;
+}
+.errorContainer p {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 0.5rem;
+}

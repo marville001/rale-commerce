@@ -1,9 +1,14 @@
 .loadContainer {
   min-height: 200px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+
   align-items: center;
 }
 .loadContainer p {
   font-size: 20px;
+}
+.loadContainer img {
+  width: 2.5rem;
 }

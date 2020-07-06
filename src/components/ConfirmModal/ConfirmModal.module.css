@@ -1,0 +1,34 @@
+.confirmContainer {
+  background-color: var(--mainBgPurple);
+  width: 320px;
+  /* position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  margin: 150px auto;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+.btns {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+}
+.btns .cancel {
+  background-color: #fff;
+  font-size: 14px;
+  width: 10rem;
+}
+.btns .ok {
+  background-color: #fff;
+  font-size: 14px;
+  width: 10rem;
+}
+.confirmContainer h4 {
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 0px 10px;
+}

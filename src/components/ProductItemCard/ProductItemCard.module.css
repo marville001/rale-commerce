@@ -1,8 +1,11 @@
 .cardContainer {
-  width: 200px;
-  margin: 5px;
   overflow: hidden;
-  padding: 0px 0px 10px;
+  background-color: #fff;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #eee;
 }
 
 .cardImageContainer {
@@ -24,9 +27,11 @@
 .cardItemPrice {
   text-align: center;
   margin: 2px;
+  font-size: 16px;
 }
-.cardItemName {
-  font-size: 14px;
+.cardItemName a {
+  font-size: 1.5rem;
+  color: var(--mainBgPurple);
 }
 .cardItemPrice span {
   color: teal;
@@ -37,6 +42,12 @@
   justify-content: center;
 }
 .addToCartBtn {
-  background-color: #0c9c0ee0;
+  background-color: var(--secBgPurple);
+  font-size: 1.5rem;
+  width: 16rem;
   color: #fff;
+  transition: 0.3s ease;
+}
+.addToCartBtn:hover {
+  background-color: var(--mainBgPurple);
 }

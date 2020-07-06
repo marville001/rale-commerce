@@ -1,0 +1,110 @@
+.detailsContainer,
+.similarProductsContainer {
+  padding: 2rem 5rem;
+}
+
+.detailsContent {
+  display: flex;
+  width: 100%;
+  min-height: 80vh;
+  padding-top: 10px;
+}
+.detailsImage {
+  width: 42rem;
+  border: 1px solid #eee;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.detailsImage img {
+  width: 40rem;
+}
+.otherDetails {
+  padding: 0px 20px;
+}
+
+.otherDetails .name {
+  color: rgb(128, 122, 122);
+  font-size: 20px;
+}
+.otherDetails .name span {
+  color: rgb(0, 0, 0);
+  text-transform: capitalize;
+}
+.otherDetails .description {
+  color: rgb(128, 122, 122);
+  font-size: 16px;
+}
+.otherDetails .description span {
+  color: rgb(0, 0, 0, 0.9);
+}
+.otherDetails .price {
+  color: rgb(128, 122, 122);
+  font-size: 16px;
+}
+.otherDetails .price span {
+  color: teal;
+  font-weight: bold;
+}
+.otherDetails .price,
+.otherDetails .name,
+.otherDetails .description {
+  margin-bottom: 20px;
+}
+.btns a,
+.btns button {
+  color: #fff;
+  width: 17rem;
+  font-size: 1.4rem;
+  transition: background-color 0.2s linear;
+}
+.btns button {
+  background-color: var(--mainBgPurple);
+}
+.btns button:hover {
+  color: var(--secBgPurple);
+  background-color: #fff;
+  border: 1px solid var(--mainBgPurple);
+}
+.btns a {
+  border: 1px solid var(--mainBgPurple);
+  color: var(--mainBgPurple);
+  background-color: #fff;
+}
+.btns a:hover {
+  border: 1px solid var(--mainBgPurple);
+  background-color: var(--mainBgPurple);
+  color: #fff;
+}
+
+.similarProducts {
+  width: 100%;
+  display: grid;
+  grid-gap: 20px;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+@media screen and (max-width: 900px) {
+  .detailsContent {
+    flex-direction: column;
+    align-items: center;
+  }
+  .detailsImage img,
+  .detailsImage {
+    width: 30rem;
+  }
+  .otherDetails {
+    margin-top: 20px;
+  }
+  .otherDetails .price,
+  .otherDetails .name,
+  .otherDetails .description {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .btns {
+    display: flex;
+    justify-content: center;
+  }
+}

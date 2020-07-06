@@ -1,42 +1,44 @@
+.navbarContainer {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
 .navbar {
   display: flex;
   justify-content: flex-end;
-  background-color: rgb(63, 7, 109);
+  width: 100%;
   align-items: center;
-  padding: 0px 10px;
-  height: 50px;
-  color: #fff;
-  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  color: var(--mainBgPurple);
 }
 .logo {
   margin-right: auto;
-}
-.logo a {
-  font-size: 16px;
+  font-size: 19px;
   color: rgb(35, 233, 8);
+  margin-left: 30px;
 }
 .navbar a {
-  color: #fff;
+  color: var(--mainBgPurple);
 }
 .navbar a:hover {
-  color: #fff;
-}
-.navbarItems {
-  background-color: #fff;
-}
-.navbar .routeLinks {
-  margin-right: 20px;
+  color: var(--secBgPurple);
 }
 .navbar .cartBtn {
   margin: 0px 15px;
 }
+.navbar .cartBtn span {
+  font-size: 1.2rem;
+}
 .navbar .loginBtn {
   background-color: #fff;
-  margin: 0px 5px;
-  padding: 5px 10px;
-  border-radius: 5px;
+  margin: 0px 5px 0px 0px;
+  padding: 1.8px 10px;
   transition: 0.2s ease;
   color: teal;
+  width: 8rem;
+  font-size: 1.6rem;
 }
 .navbar .loginBtn:hover {
   background-color: #fff;
@@ -46,57 +48,16 @@
   background-color: rgb(209, 209, 209);
   color: teal;
 }
-
-.navbar .humberger {
-  cursor: pointer;
-  display: none;
-}
-.navbar .humberger span {
-  display: flex;
-  flex-direction: column;
-  width: 25px;
-  height: 5px;
-  background-color: #fff;
-  margin: 2px;
-}
-
-.searchContainer {
-  display: flex;
-}
-.searchContainer .searchInput {
-  border: none;
-  font-size: 15px;
-  border-radius: 5px;
-  outline: none;
-}
-.searchContainer .searchBtn {
-  border-radius: 5px;
-  background-color: #fff;
-  color: red;
-}
-
-.sidepanel {
-  position: absolute;
-  width: 80%;
-  background-color: rgb(63, 7, 109);
-  display: none;
-  color: #fff;
-  min-height: 500px;
-  z-index: 1;
-  transition: 0.2s ease-in;
-}
-.sidepanel .srouteLinks {
-  color: #fff;
-  letter-spacing: 0.2em;
-  padding: 0.8rem 2rem;
-}
-.sidepanel .srouteLinks:hover {
-  background-color: rgb(91, 13, 155);
-}
+.navbar .modalLink a,
 .navbar .modalLink {
   padding: 5px 10px;
   cursor: pointer;
+  font-size: 1.6rem;
   margin: 2px 0px 5px 0px;
+}
+.navbar .modalLink a:hover,
+.navbar .modalLink:hover {
+  background-color: var(--secBgPurple);
 }
 .navbar .modalBtn span {
   cursor: pointer;
@@ -106,7 +67,7 @@
   right: 0px;
   width: 200px;
   min-height: 200px;
-  background-color: rgb(63, 7, 109);
+  background-color: var(--mainBgPurple);
   z-index: 1;
   padding-top: 20px;
   text-align: center;
@@ -115,19 +76,39 @@
   transition: 1s linear;
 }
 
-@media only screen and (max-width: 400px) {
-  .navbar .routeLinks,
-  .navbar .loginBtn,
-  .navbar .cartBtn,
-  .navbar .searchContainer,
-  .navbar .modalBtn {
-    display: none;
+.searchFilterContainer {
+  /* border-bottom: 0.3rem solid rgba(0, 0, 0, 0.2); */
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchContainer {
+  padding: 5px;
+}
+
+.searchInputContainer {
+  display: flex;
+  align-items: center;
+}
+
+.searchInputContainer input {
+  width: 35rem;
+}
+
+.searchInputContainer button {
+  /* background-color: transparent; */
+}
+
+@media only screen and (max-width: 900px) {
+}
+@media only screen and (max-width: 450px) {
+  .logo {
+    font-size: 1.4rem;
   }
-  .navbar .humberger {
-    display: block;
-  }
-  .sidepanel {
-    display: flex;
-    flex-direction: column;
+  .searchInputContainer input {
+    max-width: 30rem;
   }
 }

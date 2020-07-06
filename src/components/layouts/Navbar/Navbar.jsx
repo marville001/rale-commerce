@@ -1,51 +1,44 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
+import { connect, useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { logoutUser } from "../../../_actions";
+import { logoutUser, openModal, openMenu } from "../../../_actions";
 
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 
 import styles from "./Navbar.module.css";
-import NavBarSidePanel from "./NavBarSidePanel";
 
-const Navbar = ({ cart, currUser, logoutUser }) => {
+const Navbar = ({ logoutUser }) => {
+  const { user } = useSelector((state) => state.userReducer);
+  const { cart } = useSelector((state) => state.cart);
+
   const [accOpen, setAccOpen] = useState(false);
-  const [SidePanelOpen, SetSidePanelOpen] = useState(false);
-  return (
-    <>
-      <div className={styles.navbar}>
-        <div className={styles.logo}>
-          <Link to="/">RaleeComm Shopping</Link>
-        </div>
-        <div className={styles.routeLinks}>
-          <Link to="/">Home</Link>
-        </div>
-        <div className={styles.searchContainer}>
-          <input
-            type="text"
-            placeholder="Search products..."
-            className={styles.searchInput}
-          />
-          <button className={styles.searchBtn} type="button">
-            Search
-          </button>
-        </div>
-        <div>
-          <Link to="/cart" className={styles.cartBtn}>
-            <ShoppingCartIcon />
-            <span className="text-danger">{cart.length}</span>
-          </Link>
-        </div>
+  const [searchText, SetSearchText] = useState("");
 
-        {!currUser._id ? (
-          <div>
-            <Link to="/login" className={styles.loginBtn}>
-              Login
-            </Link>
-          </div>
+  const handleSearch = () => {
+    if (searchText !== "")
+      window.location.replace(`/products/search?search=${searchText}`);
+  };
+
+  return (
+    <div className={styles.navbarContainer}>
+      <div className={styles.navbar}>
+        <Link className={styles.logo} to="/home">
+          RaleeComm Shopping
+        </Link>
+
+        <Link to="/cart" className={styles.cartBtn}>
+          <ShoppingCartIcon style={{ fontSize: "2rem" }} />
+          <span className="text-danger">{cart.length}</span>
+        </Link>
+
+        {!user._id ? (
+          <Link to="/login" className={styles.loginBtn}>
+            Login
+          </Link>
         ) : (
           <div className={styles.modalBtn}>
             <span
@@ -53,12 +46,12 @@ const Navbar = ({ cart, currUser, logoutUser }) => {
                 setAccOpen(!accOpen);
               }}
             >
-              <AccountCircleIcon />
+              <AccountCircleIcon style={{ fontSize: "2rem" }} />
               <ArrowDropDownIcon />
             </span>
             <div
               style={{
-                display: accOpen ? "block" : "none"
+                display: accOpen ? "block" : "none",
               }}
               className={styles.modalBtnContent}
             >
@@ -69,7 +62,7 @@ const Navbar = ({ cart, currUser, logoutUser }) => {
                   }}
                   to="/user/profile"
                 >
-                  User Profile
+                  {user.name}
                 </Link>
               </div>
               <div
@@ -84,33 +77,34 @@ const Navbar = ({ cart, currUser, logoutUser }) => {
             </div>
           </div>
         )}
-
-        <div
-          className={styles.humberger}
-          onClick={() => SetSidePanelOpen(!SidePanelOpen)}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
       </div>
-      <NavBarSidePanel
-        className="bbcb cbdbdb"
-        open={SidePanelOpen}
-        close={SetSidePanelOpen}
-        styles={styles}
-        id={currUser._id}
-        logoutUser={logoutUser}
-      />
-    </>
+      <div className={styles.searchFilterContainer}>
+        <div className={styles.searchContainer}>
+          <div className={styles.searchInputContainer}>
+            <input
+              type="text"
+              placeholder="Search product..."
+              name="searchText"
+              value={searchText}
+              onChange={(e) => SetSearchText(e.target.value)}
+            />
+            {/* <button onClick={handleSearch}> */}
+            <SearchOutlinedIcon
+              style={{
+                fontSize: "3rem",
+                marginLeft: "-3.2rem",
+                cursor: "pointer",
+                height: "3.2rem",
+                borderRadius: "5px",
+              }}
+              onClick={handleSearch}
+            ></SearchOutlinedIcon>
+          </div>
+        </div>
+        {/* <div className={styles.filterContainer}>filter</div> */}
+      </div>
+    </div>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    cart: state.cart,
-    currUser: state.currUser
-  };
-};
-
-export default connect(mapStateToProps, { logoutUser })(Navbar);
+export default connect(null, { logoutUser, openModal, openMenu })(Navbar);

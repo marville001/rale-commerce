@@ -1,0 +1,31 @@
+.modalContent {
+  background-color: #fff;
+  width: 30rem;
+  margin: auto;
+  min-height: 40rem;
+  padding: 1.25rem;
+  position: relative;
+  text-align: center;
+  text-transform: capitalize;
+}
+.image {
+  background-color: lawngreen;
+  margin-bottom: 1.5rem;
+}
+.image img {
+  width: 100%;
+  height: auto;
+}
+.title,
+.name {
+  margin: 0.75rem 0px;
+  font-size: 1.6rem;
+}
+.price {
+  font-size: 1.2rem;
+}
+.price span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: teal;
+}

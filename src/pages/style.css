@@ -11,10 +11,3 @@
 .f-15 {
   font-size: 15px;
 }
-
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 6px 12px;
-  margin: 0;
-}

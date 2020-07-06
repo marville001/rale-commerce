@@ -1,9 +1,14 @@
 export { default as CartItem } from "./CartItem/CartItem";
 export { default as Loading } from "./Loading/Loading";
+export { default as Error } from "./Error/Error";
 export { default as ItemCard } from "./ProductItemCard/ProductItemCard";
 export { default as ItemCardList } from "./ProductItemCardList/ProductItemCardList";
 export { default as Navbar } from "./layouts/Navbar/Navbar";
 export { default as NavFooter } from "./layouts/NavFooter/NavFooter";
-export { default as ProductNavigation } from "./ProductNavigation/ProductNavigation";
 export { default as Title } from "./Title/Title";
-export { default as Alert } from "./Alert/Alert";
+export { default as Modal } from "./Modal/Modal";
+export { default as AddToCartModal } from "./AddToCartModal/AddToCartModal";
+export { default as IconedButton } from "./IconedButton/IconedButton";
+export { default as SideBarCategories } from "./SideBarCategories/SideBarCategories";
+export { default as ConfirmModal } from "./ConfirmModal/ConfirmModal";
+export { default as CheckoutSteps } from "./CheckoutSteps/CheckoutSteps";

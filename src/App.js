@@ -1,32 +1,35 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import styled from "styled-components";
 import Routes from "./routes";
-import { loadProducts, getProfileFetch } from "./_actions";
+import { loadProducts, getProfileFetch, loadCart } from "./_actions";
+import { AddToCartModal } from "./components";
 
 class App extends Component {
   componentDidMount() {
     this.props.loadProducts("");
     this.props.getProfileFetch();
-  }
-  componentWillUnmount() {
-    localStorage.removeItem("token");
+    this.props.loadCart();
   }
 
   render() {
-    return <Routes />;
+    return (
+      <>
+        <Routes />
+        <AddToCartModal />
+      </>
+    );
   }
 }
 
-const ErrorModal = styled.div`
-  width: 80%;
-  color: #000;
-  text-align: center;
-  position: absolute;
-  z-index: 2;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, -10%);
-`;
+// const ErrorModal = styled.div`
+//   width: 80%;
+//   color: #000;
+//   text-align: center;
+//   position: absolute;
+//   z-index: 2;
+//   top: 10%;
+//   left: 50%;
+//   transform: translate(-50%, -10%);
+// `;
 
-export default connect(null, { loadProducts, getProfileFetch })(App);
+export default connect(null, { loadProducts, getProfileFetch, loadCart })(App);

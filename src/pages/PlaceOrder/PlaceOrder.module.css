@@ -1,0 +1,54 @@
+.placeOrderContatiner {
+  margin: 2rem;
+  min-height: 40rem;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.placeOrderInfoContainer {
+  flex: 3 1 50rem;
+}
+.placeOrderActions {
+  padding: 1rem;
+  flex: 1 1 25rem;
+  border: 0.1rem solid #c0c0c0;
+  border-radius: 0.5rem;
+  background-color: #fcfcfc;
+}
+
+.placeOrderActions button {
+  display: block;
+  margin: 0;
+  width: 100%;
+  font-size: 1.6rem;
+  padding: 0.5rem;
+}
+.placeOrderInfoContainer > div {
+  border: 0.1rem solid #c0c0c0;
+  border-radius: 0.5rem;
+  background-color: #fcfcfc;
+  padding: 1rem;
+  margin: 1rem;
+}
+.placeOrderInfoContainer > div:nth-child(1) {
+  margin-top: 0;
+}
+
+.placeOrderActions h3 {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.placeOrderActions .os,
+.placeOrderActions .osl {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.6rem;
+}
+.placeOrderActions .osl {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #c04000;
+  margin-top: 0.5rem;
+}

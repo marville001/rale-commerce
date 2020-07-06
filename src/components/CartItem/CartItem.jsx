@@ -1,72 +1,83 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { removeFromCart, incrementCount, decrementCount } from "../../_actions";
+import { removeFromCart, changeQuantity } from "../../_actions";
 import DeleteIcon from "@material-ui/icons/Delete";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+
+import styles from "./CartItem.module.css";
+import { ConfirmModal } from "../";
 
 class CartItem extends Component {
+  state = { confirmModalOpen: false };
+
+  openConfirmModal = () => {
+    this.setState(() => {
+      return { confirmModalOpen: true };
+    });
+  };
+  closeConfirmModal = () => {
+    this.setState(() => {
+      return { confirmModalOpen: false };
+    });
+  };
+
+  handleRemove = (id) => {
+    this.props.removeFromCart(id);
+    this.forceUpdate();
+    this.closeConfirmModal();
+  };
+
   render() {
-    const {
-      product,
-      removeFromCart,
-      incrementCount,
-      decrementCount
-    } = this.props;
+    const { product, changeQuantity, addTotal } = this.props;
+
     return (
-      <div className="cart-item">
-        <div className="cart-item-img">
-          <img
-            className="cartt-img-top"
-            src={product.imageUrl}
-            alt={product.name}
-          />
-        </div>
-        <div className="cart-item-dets">
-          <h5 className="cart-item-title">{product.name}</h5>
-          <div className="cartincdec">
-            <span
-              onClick={() => {
-                decrementCount(product._id);
+      <>
+        <tr className={styles.cartItemContainer}>
+          <td className={styles.cartItemImg}>
+            <img src={product.imageUrl} alt={product.name} />
+          </td>
+          <td className={styles.cartItemTitle}>{product.name}</td>
+          <td className={styles.cartItemPrice}>KSh {product.price}</td>
+          <td className={styles.cartItemQuantity}>
+            <select
+              onChange={(e) => {
+                changeQuantity(product._id, e.target.value);
+                addTotal();
                 this.forceUpdate();
               }}
-              className="cartincdec-minus"
+              name="quantity"
+              id=""
+              value={product.count}
             >
-              -
-            </span>
-            <span className="cartincdec-count">{product.count}</span>
-            <span
-              onClick={() => {
-                incrementCount(product._id);
-                this.forceUpdate();
-              }}
-              className="cartincdec-plus"
-            >
-              +
-            </span>
-          </div>
-        </div>
-        <div>
-          Price $ <span className="cart-item-price">{product.price}</span>
-        </div>
-        <div>
-          Total $ <span className="cart-item-total">{product.total}</span>
-        </div>
-        <div
-          onClick={() => {
-            removeFromCart(product._id);
-            this.forceUpdate();
-          }}
-          className="cart-item-delbtn"
-        >
-          <span>
-            <DeleteIcon />
-          </span>
-        </div>
-      </div>
+              {[...Array(10).keys()].map((opt) => (
+                <option key={opt + 1} value={opt + 1}>
+                  {opt + 1}
+                </option>
+              ))}
+            </select>
+          </td>
+          <td className={styles.cartItemTotal}>
+            KSh {product.total.toFixed(2)}
+          </td>
+          <td>
+            <div onClick={this.openConfirmModal} className={styles.remove}>
+              <DeleteIcon />
+            </div>
+          </td>
+        </tr>
+        <ConfirmModal
+          confirmAction={this.handleRemove}
+          closeAction={this.closeConfirmModal}
+          id={product._id}
+          open={this.state.confirmModalOpen}
+          title="Confirm removing item from cart"
+        />
+      </>
     );
   }
 }
+
 export default connect(null, {
   removeFromCart,
-  incrementCount,
-  decrementCount
+  changeQuantity,
 })(CartItem);

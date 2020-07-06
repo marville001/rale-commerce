@@ -1,28 +1,69 @@
-body,
-html,
-* {
+body {
+  overflow-x: hidden;
+}
+html {
+  font-size: 10px;
+}
+*,
+*::before,
+*::after {
   margin: 0px;
   padding: 0px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
   box-sizing: border-box;
+  /* user-select: none; */
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  cursor: text;
+}
+
+:root {
+  --mainBgPurple: rgb(63, 7, 109);
+  --secBgPurple: rgb(91, 13, 155);
+  --mainOrangeColor: #f68b1e;
+}
+
 input {
-  margin: 0.5rem !important;
+  margin: 0.5rem 0px !important;
+  font-size: 1.4rem;
 }
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="password"] {
+  display: block;
+  padding: 6px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+}
+
+input:focus {
+  /* border: 1px solid #000; */
+  outline: none;
+}
+
 button,
+input[type="button"],
 a {
   display: inline-block;
   font-weight: 400;
   text-align: center;
   vertical-align: center;
   user-select: none;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 1.6rem;
   text-transform: capitalize;
   border: none;
   border-radius: 0.25rem;
   margin: 0.5rem;
+  cursor: pointer;
 }
 .btnS {
   background-color: #28a745;
@@ -39,4 +80,10 @@ a:hover {
 }
 ul li {
   list-style-type: none;
+}
+.flex {
+  display: flex;
+}
+.alignc {
+  text-align: center;
 }

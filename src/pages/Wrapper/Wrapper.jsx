@@ -1,11 +1,19 @@
 import React from "react";
 import { Navbar, NavFooter } from "../../components";
 
-const Wrapper = props => {
+import styles from "./Wrapper.module.css";
+
+const Wrapper = (props) => {
   return (
-    <div>
+    <div className={styles.wc}>
       <Navbar />
-      <div className="dd" style={{ position: "relative", minHeight: "80vh" }}>
+      <div
+        style={{
+          position: "relative",
+          minHeight: "80vh",
+          // border: "1px solid #eee",
+        }}
+      >
         {props.children}
       </div>
       <NavFooter />

@@ -1,0 +1,205 @@
+/* admin login */
+.flex-jcenter {
+  display: flex;
+  justify-content: center;
+}
+.flex-jacenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-container {
+  padding-top: 10rem;
+  background-color: #eeeeee;
+  height: 100vh;
+}
+.form-content {
+  width: 40rem;
+  height: 40rem;
+  border-radius: 2.5rem;
+  padding: 0px 2rem;
+  box-shadow: -10px -10px 15px 8px #fff, 10px 10px 15px 8px #fff,
+    10px -10px 15px 8px #fff, -10px 10px 15px 8px #fff;
+}
+.form-content h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 2rem;
+}
+.input-container {
+  padding: 0 1rem;
+  margin-bottom: 3rem;
+}
+.input-container input {
+  width: 100%;
+  height: 5rem;
+  padding: 3rem;
+  font-size: 1.6rem;
+  background: transparent;
+  outline: none;
+}
+.input-border {
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+}
+.input-shadow {
+  box-shadow: inset 3px 3px 8px #00000033, inset -8px -8px 12px #ffffff;
+}
+.input-shadow input {
+  border: none !important;
+}
+
+.input-container:last-child {
+  padding: 0;
+  margin-top: 4rem;
+}
+.input-container button {
+  width: 95%;
+  height: 5rem;
+  font-size: 2.5rem;
+  background-color: transparent;
+  box-shadow: -3px -3px 12px #fff, 3px 3px 12px #00000033;
+  border-radius: 1rem;
+}
+.input-container label {
+  font-size: 1.5rem;
+}
+
+.error-container {
+  justify-content: center;
+  align-items: center;
+  background-color: tomato;
+  height: 4rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+/* Sidebar */
+.sidebar-container {
+  color: #fff;
+  z-index: 10;
+}
+.item-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  position: relative;
+  transition: all 0.2s ease;
+  margin-bottom: 1rem;
+}
+.item-container:hover {
+  background-color: var(--secBgPurple);
+  cursor: pointer;
+}
+.item-name {
+  position: absolute;
+  left: 100%;
+  top: 1.6rem;
+  background-color: var(--secBgPurple);
+  min-width: 10rem;
+  height: 4rem;
+  font-size: 1.6rem;
+  padding: 1rem 0;
+  text-align: center;
+  transform: translate(-100%);
+  text-transform: capitalize;
+  z-index: 1;
+  display: none;
+}
+.item-container:hover .item-name {
+  display: block;
+  transform: translateX(0);
+}
+.admin-logo {
+  width: 100%;
+  background-color: teal;
+  height: 7rem;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* Dashboard */
+.page-container {
+  min-height: 100vh;
+  min-width: 100rem;
+  padding: 2rem;
+}
+.q-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.dash-item-container {
+  background-color: #fff;
+  box-shadow: 3px 3px 12px #00000033;
+  width: 30rem;
+  height: 15rem;
+  margin: 1rem;
+}
+.dash-item-container h2 {
+  text-align: center;
+  margin: 1rem 0;
+}
+.dash-item-container .item-quantity {
+  padding: 1rem;
+  font-size: 4rem;
+  text-align: center;
+  color: tomato;
+}
+.form {
+  width: 500px;
+  border: 1px solid #eee;
+  padding: 2rem;
+}
+.form .input-container {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.form .input-container:last-child {
+  padding: 1rem;
+  margin-top: 0;
+}
+.input-container input[type="number"] {
+  height: 5rem;
+  padding: 2rem;
+  /* margin-bottom: 1rem; */
+}
+.input-container input[type="file"] {
+  padding: 1rem;
+  color: #000;
+}
+.input-container textarea {
+  display: block;
+  width: 100%;
+  height: 10rem;
+  font-size: 1.6rem;
+  padding: 0.5rem;
+}
+.add-btn-container {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.add-btn {
+  width: 15rem;
+  background-color: var(--mainBgPurple);
+  color: #fff;
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+}
+.img-container {
+  margin-left: 2rem;
+  width: 200px;
+  height: 200px;
+  /* background-color: blueviolet; */
+  padding: 1rem;
+}
+
+.img-container img {
+  width: 100%;
+  height: 85%;
+}

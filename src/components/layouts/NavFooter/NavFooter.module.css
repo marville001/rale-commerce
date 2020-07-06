@@ -12,9 +12,36 @@
   justify-content: center;
 }
 .socialLinks a {
-  margin: 5px 15px;
-  color: brown;
+  margin: 5px;
+  margin-bottom: 20px;
+  color: var(--mainBgPurple);
+  position: relative;
 }
-.socialLinks a:hover {
+.sicon {
+  transition: transform 0.5s ease !important;
+  font-size: 2rem;
+}
+.socialLinks a:hover .sicon {
   color: blue;
+  transform: scale(1.5);
+  margin-right: 4px;
+}
+.sname {
+  /* color: green;
+  transform: translateX(-100%);
+  overflow: hidden;
+  opacity: 0; */
+
+  position: absolute;
+  top: 80%;
+  left: -1px;
+  font-size: 1.2rem;
+  display: none;
+  opacity: 0;
+  transition: all 0.5s ease;
+  animation: dis 0.5s 0.5s linear;
+}
+.socialLinks a:hover .sname {
+  display: block;
+  opacity: 1;
 }

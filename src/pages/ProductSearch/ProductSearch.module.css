@@ -1,0 +1,21 @@
+.noProductContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 60vh;
+  text-transform: uppercase;
+}
+.noProductContainer h4 {
+  font-size: 30px;
+  user-select: none;
+  color: rgb(214, 214, 214);
+}
+.productsItemsContainer {
+  width: 80%;
+  margin: 2rem auto;
+  display: grid;
+  grid-gap: 20px;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}

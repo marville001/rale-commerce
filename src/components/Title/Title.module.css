@@ -3,6 +3,7 @@
   text-align: center;
   font-size: 30px;
   text-transform: capitalize;
+  user-select: none;
 }
 .titleContainer span {
   color: teal;

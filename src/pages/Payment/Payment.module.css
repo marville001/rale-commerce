@@ -1,0 +1,46 @@
+.paymentContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 1rem;
+  min-height: 90vh;
+  padding-bottom: 5rem;
+  background-color: #fff;
+}
+
+.paymentContent {
+  width: 35rem;
+  padding: 2rem;
+  border: 0.1rem #c0c0c0 solid;
+  border-radius: 0.5rem;
+}
+
+.inputContainer {
+  margin: 1.75rem 0px;
+}
+.inputContainer input {
+  padding: 1rem;
+}
+.inputContainer input:focus {
+  border-color: var(--mainBgPurple);
+  border-width: 1.5px;
+}
+.inputContainer label {
+  font-size: 1.6rem;
+  margin-left: 1rem;
+}
+
+.continueBtn {
+  background-color: var(--mainBgPurple);
+  letter-spacing: 0.5rem;
+  color: #fff;
+  margin: 0.5rem 0;
+  width: 100%;
+  font-size: 1.6rem;
+}
+.continueBtn:hover {
+  background-color: var(--secBgPurple);
+}
+.continueBtn:active {
+  background-color: rgb(136, 85, 184);
+}

@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 
 class PageNotFound extends Component {
+  // componentDidMount() {
+  //   setTimeout(() => {
+  //     window.location.href = "/home";
+  //   }, 3000);
+  // }
   render() {
     return (
       <div className="container">
@@ -18,7 +23,6 @@ class PageNotFound extends Component {
             </h5>
           </div>
         </div>
-        <div className="row"></div>
       </div>
     );
   }
