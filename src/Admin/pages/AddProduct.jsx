@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { saveProduct } from "../../_actions/productActions";
 
 const AddProduct = (props) => {
-  const { admin } = useSelector((state) => state.admin);
+  const { admin, errorSave, loadingSave } = useSelector((state) => state.admin);
   const dispatch = useDispatch();
   useEffect(() => {
     if (!admin._id) {
@@ -12,10 +12,12 @@ const AddProduct = (props) => {
     }
   }, [admin]);
 
+  console.log(errorSave, loadingSave);
+
   const [name, setName] = useState("");
-  const [price, setPrice] = useState(null);
+  const [price, setPrice] = useState(0);
   const [category, setCategory] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(null);
   // const [imageName, setImageName] = useState("");
   const [description, setDescription] = useState("");
 
@@ -29,8 +31,8 @@ const AddProduct = (props) => {
 
   return (
     <Wrapper>
-      <h1>Add Products</h1>
-      <div className="page-container flex">
+      <h1 style={{ textAlign: "center" }}>Add Products</h1>
+      <div className="page-container flex-jcenter">
         <div className="form">
           <div className="input-container">
             <label htmlFor="name">Name</label>
@@ -44,7 +46,7 @@ const AddProduct = (props) => {
             />
           </div>
           <div style={{ marginBottom: "1rem" }} className="input-container">
-            <label htmlFor="name">Price(Ksh)</label>
+            <label htmlFor="price">Price(Ksh)</label>
             <input
               className="input-border"
               type="number"
@@ -55,7 +57,7 @@ const AddProduct = (props) => {
             />
           </div>
           <div className="input-container">
-            <label htmlFor="name">Category</label>
+            <label htmlFor="category">Category</label>
             <input
               placeholder="Enter category..."
               className="input-border"
@@ -91,10 +93,6 @@ const AddProduct = (props) => {
             </button>
           </div>
         </div>
-        {/* <div className="img-container">
-          <h3 className="alignc">Selected Image</h3>
-          <img src={"/ff"} alt="selected image" />
-        </div> */}
       </div>
     </Wrapper>
   );

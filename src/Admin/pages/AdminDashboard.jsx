@@ -13,7 +13,7 @@ const AdminDashboard = (props) => {
   return (
     <Wrapper>
       <h1>Dashboard</h1>
-      <div className="page-container dash-container">
+      <div className="fixed-width page-container dash-container">
         <div className="q-container">
           <div className="dash-item-container">
             <h2>Total Items</h2>

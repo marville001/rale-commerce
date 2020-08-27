@@ -37,6 +37,9 @@ input {
 input[type="text"],
 input[type="email"],
 input[type="search"],
+input[type="number"],
+input[type="file"],
+textarea,
 input[type="password"] {
   display: block;
   padding: 6px 12px;
@@ -44,7 +47,8 @@ input[type="password"] {
   border-radius: 0.5rem;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   /* border: 1px solid #000; */
   outline: none;
 }

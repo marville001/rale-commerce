@@ -28,7 +28,11 @@ const SideBar = (props) => {
   return (
     <SideBarContainer>
       <div>
-        <div onClick={() => handlePage("dashboard")} className="admin-logo">
+        <div
+          style={{ cursor: "pointer" }}
+          onClick={() => handlePage("dashboard")}
+          className="admin-logo"
+        >
           LoGo
         </div>
         <Item

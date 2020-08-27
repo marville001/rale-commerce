@@ -10,16 +10,18 @@
 }
 .form-container {
   padding-top: 10rem;
-  background-color: #eeeeee;
+  /* background-color: #eeeeee; */
   height: 100vh;
 }
 .form-content {
   width: 40rem;
-  height: 40rem;
-  border-radius: 2.5rem;
+  height: 35rem;
+  border-radius: 0.5rem;
+  border: 1px solid #eee;
   padding: 0px 2rem;
-  box-shadow: -10px -10px 15px 8px #fff, 10px 10px 15px 8px #fff,
-    10px -10px 15px 8px #fff, -10px 10px 15px 8px #fff;
+  position: relative;
+  /* box-shadow: -10px -10px 15px 8px #fff, 10px 10px 15px 8px #fff,
+    10px -10px 15px 8px #fff, -10px 10px 15px 8px #fff; */
 }
 .form-content h2 {
   text-align: center;
@@ -54,12 +56,15 @@
   margin-top: 4rem;
 }
 .input-container button {
-  width: 95%;
+  width: 100%;
+  margin: 0;
   height: 5rem;
   font-size: 2.5rem;
-  background-color: transparent;
-  box-shadow: -3px -3px 12px #fff, 3px 3px 12px #00000033;
-  border-radius: 1rem;
+  background-color: var(--mainBgPurple);
+  color: #fff;
+  /*box-shadow: -3px -3px 12px #fff, 3px 3px 12px #00000033;
+  border-radius: 1rem; */
+  margin-bottom: 0;
 }
 .input-container label {
   font-size: 1.5rem;
@@ -86,7 +91,6 @@
   padding: 1rem 0;
   position: relative;
   transition: all 0.2s ease;
-  margin-bottom: 1rem;
 }
 .item-container:hover {
   background-color: var(--secBgPurple);
@@ -126,8 +130,11 @@
 /* Dashboard */
 .page-container {
   min-height: 100vh;
-  min-width: 100rem;
+
   padding: 2rem;
+}
+.fixed-width {
+  min-width: 100rem;
 }
 .q-container {
   display: flex;
@@ -185,7 +192,7 @@
   justify-content: center;
 }
 .add-btn {
-  width: 15rem;
+  width: 100%;
   background-color: var(--mainBgPurple);
   color: #fff;
   font-size: 2rem;
