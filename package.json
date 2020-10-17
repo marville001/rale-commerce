@@ -1,5 +1,5 @@
 {
-  "proxy":"https:me.martin.com",
+  "proxy":"https://enigmatic-fjord-71581.herokuapp.com",
   "name": "client",
   "proxy": "https://enigmatic-fjord-71581.herokuapp.com",
   "version": "0.1.0",
